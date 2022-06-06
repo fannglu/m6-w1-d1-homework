@@ -39,10 +39,10 @@ class InventoryEdit extends Component {
   handleSubmit = async (event) => {
     event.preventDefault();
     const { item } = this.state;
-    await fetch("./api/inventory", {
+    await fetch("/api/inventory", {
       method: item._id ? "PUT" : "POST",
       headers: {
-        Accept: "application/json",
+        "Accept": "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(item),

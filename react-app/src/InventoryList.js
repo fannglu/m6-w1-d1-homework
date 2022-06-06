@@ -118,4 +118,3 @@ class InventoryList extends Component {
   }
 }
 export default InventoryList;
-
