@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Home from "./Componets/Layout/Home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import InventoryList from "./Componets/Inventory/InventoryList";
-import InventoryEdit from "./Componets/Inventory/InventoryEdit";
+import InventoryList from "./Componets/Habits/InventoryList";
+import InventoryEdit from "./Componets/Habits/InventoryEdit";
 import Register from "./Componets/Register";
 import Login from './Componets/Register/Login'
 // import "./App.css";

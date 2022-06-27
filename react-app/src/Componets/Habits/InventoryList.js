@@ -4,7 +4,9 @@ import NavBar from "../Layout/NavBar/index";
 import { Link, withRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import InventoryEdit from "./InventoryEdit";
-// import "./App.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import "./index.scss";
 // import { updateInventory } from "../../node-mongo/app/controllers/inventory.controller";
 
 class InventoryList extends Component {
@@ -67,20 +69,42 @@ class InventoryList extends Component {
             <ButtonGroup>
               <Button
                 size="sm"
-                color="primary"
+                color="transparent"
                 tag={Link}
                 to={"/habits/" + inventory._id}
               >
-                Edit
+                <FontAwesomeIcon icon={faEdit} color="#3C873A" />
               </Button>
               <Button
                 size="sm"
-                color="danger"
+                color="transparent"
                 onClick={() => this.removeInv(inventory._id)}
               >
-                Delete
+                <FontAwesomeIcon icon={faTrash} color="red" />
               </Button>
             </ButtonGroup>
+          </td>
+          <td>
+            <input type="checkbox" />
+          </td>
+          <td>
+            <input type="checkbox" />
+          </td>
+          <td>
+            <input type="checkbox" />
+          </td>
+          <td>
+            <input type="checkbox" />
+          </td>
+          <td>
+            <input type="checkbox" />
+          </td>
+
+          <td>
+            <input type="checkbox" />
+          </td>
+          <td>
+            <input type="checkbox" />
           </td>
         </tr>
       );
@@ -94,8 +118,28 @@ class InventoryList extends Component {
             <InventoryEdit />
           </div> */}
 
-        <Container fluid className="col-6">
+        <Container fluid className="col-12">
           <div className="float-right">
+            <h3>Habit List</h3>
+            <Table className="mt-4">
+              <thead>
+                <tr>
+                  <th width="20%">Habit Name</th>
+                  {/* <th width="15%">Short Description</th> */}
+                  {/* <th width="15%">Price</th> */}
+                  <th width="30%">Short Description</th>
+                  <th width="20%">Actions</th>
+                  <th width="7%">Monday</th>
+                  <th width="7%">Tuesday</th>
+                  <th width="7%">Wednesday</th>
+                  <th width="7%">Thursday</th>
+                  <th width="7%">Friday</th>
+                  <th width="7%">Saturday</th>
+                  <th width="10%">Sunday</th>
+                </tr>
+              </thead>
+              <tbody>{inventoryList}</tbody>
+            </Table>
             <Button
               color="success"
               className="my-4 flat-button"
@@ -105,19 +149,6 @@ class InventoryList extends Component {
               Add New Habit
             </Button>
           </div>
-          <h3>Habit List</h3>
-          <Table className="mt-4">
-            <thead>
-              <tr>
-                <th width="20%">Habit Name</th>
-                {/* <th width="15%">Short Description</th> */}
-                {/* <th width="15%">Price</th> */}
-                <th width="15%">Short Description</th>
-                <th width="15%">Actions</th>
-              </tr>
-            </thead>
-            <tbody>{inventoryList}</tbody>
-          </Table>
         </Container>
       </div>
       // </div>
