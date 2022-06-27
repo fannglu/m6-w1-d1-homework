@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { Button, ButtonGroup, Container, Table } from "reactstrap";
-import AppNavbar from "./Navbar";
-import { Link } from "react-router-dom";
+import NavBar from "../Layout/NavBar/index"
+import { Link, withRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+// import "./App.css";
 // import { updateInventory } from "../../node-mongo/app/controllers/inventory.controller";
 
 class InventoryList extends Component {
@@ -58,9 +58,9 @@ class InventoryList extends Component {
     const inventoryList = inventories.map((inventory) => {
       return (
         <tr key={inventory._id}>
-          <td style={{ whiteSpace: "nowrap" }}>{inventory.prodname}</td>
-          <td>{inventory.qty}</td>
-          <td>{inventory.price}</td>
+          <td style={{ whiteSpace: "nowrap" }}>{inventory.habitName}</td>
+          {/* <td>{inventory.qty}</td> */}
+          {/* <td>{inventory.price}</td> */}
           <td>{inventory.status}</td>
           <td>
             <ButtonGroup>
@@ -87,7 +87,7 @@ class InventoryList extends Component {
 
     return (
       <div>
-        <AppNavbar />
+        <NavBar />
         <Container fluid>
           <div className="float-right">
             <Button
@@ -99,14 +99,14 @@ class InventoryList extends Component {
               Add inventory
             </Button>
           </div>
-          <h3>Inventory List</h3>
+          <h3>Habit List</h3>
           <Table className="mt-4">
             <thead>
               <tr>
-                <th width="20%">Product Name</th>
-                <th width="15%">Quantity</th>
-                <th width="15%">Price</th>
-                <th width="15%">Status</th>
+                <th width="20%">Habit Name</th>
+                {/* <th width="15%">Short Description</th> */}
+                {/* <th width="15%">Price</th> */}
+                <th width="15%">Short Description</th>
                 <th width="15%">Actions</th>
               </tr>
             </thead>
@@ -117,4 +117,4 @@ class InventoryList extends Component {
     );
   }
 }
-export default InventoryList;
+export default withRouter(InventoryList);

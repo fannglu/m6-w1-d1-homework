@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const InventorySchema = new mongoose.Schema({
-    prodname: String,
+    habitName: String,
     qty: Number, 
     price: Number, 
     status: String

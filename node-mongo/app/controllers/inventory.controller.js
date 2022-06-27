@@ -4,7 +4,7 @@ const Inventory = mongoose.model("Inventory");
 
 exports.createInventory = (req, res) => {
   const inventory = new Inventory({
-    prodname: req.body.prodname,
+    habitName: req.body.habitName,
     qty: req.body.qty,
     price: req.body.price,
     status: req.body.status,
@@ -61,7 +61,7 @@ exports.inventories = (req, res) => {
 };
 // Delete an inventory base on the id of the associated item the user clicks
 exports.deleteInventory = (req, res) => {
-  Inventory.findByIdAndRemove(req.params.id)
+  Inventory.findByIdAndRemove(req.body.id)
     .select("-__v-_id")
     .then((inventory) => {
       if (!inventory) {
@@ -85,7 +85,7 @@ exports.updateInventory = (req, res) => {
   Inventory.findByIdAndUpdate(
     req.body._id,
     {
-      prodname: req.body.prodname,
+      habitName: req.body.habitName,
       qty: req.body.qty,
       price: req.body.price,
       status: req.body.status,

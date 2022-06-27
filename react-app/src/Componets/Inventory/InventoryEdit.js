@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Button, Container, Form, FormGroup, Input, Label } from "reactstrap";
-import AppNavbar from "./Navbar";
+// import AppNavbar from "../../Navbar";
 
 class InventoryEdit extends Component {
-  emptyInventory = {
-    prodname: "",
+  emptyHabit = {
+    habitName: "",
     qty: "",
     price: "",
     status: "",
@@ -14,7 +14,7 @@ class InventoryEdit extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      item: this.emptyInventory,
+      item: this.emptyHabit,
     };
   }
 
@@ -42,7 +42,7 @@ class InventoryEdit extends Component {
     await fetch("/api/inventory", {
       method: item._id ? "PUT" : "POST",
       headers: {
-        "Accept": "application/json",
+        Accept: "application/json",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(item),
@@ -60,27 +60,27 @@ class InventoryEdit extends Component {
     );
     return (
       <div>
-        <AppNavbar />
+        {/* <AppNavbar /> */}
         <Container>
           {/* display the appropriate title */}
           {title}
           <Form onSubmit={this.handleSubmit}>
             <FormGroup>
-              <Label for="prodname" className="h5 mt-3">
-                Product Name
+              <Label for="habitName" className="h5 mt-3">
+                Habit Name
               </Label>
               <Input
                 type="text"
-                name="prodname"
-                id="prodname"
-                value={item.prodname || ""}
+                name="habitName"
+                id="habitName"
+                value={item.habitName || ""}
                 onChange={this.handleChange}
-                autoComplete="prodname"
+                autoComplete="habitName"
               />
             </FormGroup>
-            <FormGroup>
+            {/* <FormGroup>
               <Label for="qty" className="h5 mt-3">
-                Quantity
+                Short Description
               </Label>
               <Input
                 type="text"
@@ -93,7 +93,7 @@ class InventoryEdit extends Component {
             </FormGroup>
             <FormGroup>
               <Label for="price" className="h5 mt-3">
-                Price
+                Date
               </Label>
               <Input
                 type="text"
@@ -103,10 +103,10 @@ class InventoryEdit extends Component {
                 onChange={this.handleChange}
                 autoComplete="price"
               />
-            </FormGroup>
+            </FormGroup> */}
             <FormGroup>
               <Label for="status" className="h5 mt-3">
-                Status
+                Short Description
               </Label>
               <Input
                 type="text"
@@ -137,5 +137,4 @@ class InventoryEdit extends Component {
     );
   }
 }
-
 export default withRouter(InventoryEdit);

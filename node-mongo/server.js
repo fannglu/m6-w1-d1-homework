@@ -28,7 +28,7 @@ mongoose.connection
 require("./app/routes/inventory.router.js")(app);
 
 // create a server
-const server = app.listen(8080, function () {
+const server = app.listen(8081, function () {
   const host = server.address().address;
   const port = server.address().port;
 
