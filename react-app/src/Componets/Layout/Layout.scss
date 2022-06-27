@@ -7,25 +7,35 @@
 }
 
 .left {
-  background: $background-left;
-  height: 100vh;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  margin: auto auto;
   h1 {
-    font-size: 2rem;
+    font-size: 3rem;
     text-align: center;
     color: $font-purple;
+    margin-top: 2rem;
+    font-family: "Henrietta Bold";
+    animation: fadeInUp 2s 2s;
+    animation-fill-mode: forwards;
   }
-  p{
+  p {
     text-align: center;
+    font-size: 2rem;
+    margin-top: 1rem;
+    animation: fadeInUp 2s 2s;
+    animation-fill-mode: forwards;
   }
-  
+  .button {
+    text-align: center;
+    width: 20rem;
+    margin-top: 2rem;
+  }
 }
 
-.register-page, .newHabits-page {
+.register-page {
   position: absolute;
-}
-
-.button{
-    position: absolute;
 }
 
 * {
@@ -33,11 +43,44 @@
 }
 
 .right {
-  position: absolute;
   justify-content: center;
-  justify-items: center;
-  margin: auto auto;
-  width: 50%;
-  left: 30rem;
-  top: 2rem;
+  text-align: center;
+  // align-items: center;
+  margin: 0 auto;
+}
+
+.flat-button {
+  color: $font-light-purple;
+  font-size: 20px;
+  letter-spacing: 3px;
+  text-decoration: none;
+  padding: 8px 10px;
+  border: 1px solid $font-light-purple;
+  width: 70%;
+  border-radius: 45px;
+  background: 0 0;
+  text-transform: uppercase;
+  text-align: center;
+  animation: fadeIn 0.5s 0.5s;
+  animation-fill-mode: forwards;
+  text-decoration: none;
+  &:hover {
+    color: white;
+    background: $font-light-purple;
+  }
+}
+
+.add-habit {
+  * {
+    font-size: 30px;
+  }
+  margin-top: 2rem;
+  h2 {
+    font-weight: 500;
+    font-size: 50px;
+  }
+  .label,
+  .input {
+    width: 70%;
+  }
 }

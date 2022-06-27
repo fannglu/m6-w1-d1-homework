@@ -93,16 +93,16 @@
       }
     }
 
-    a.habit-link {
-      &::after {
-        content: "HABITS";
-        left: -15px;
-      }
-    }
+    // a.habit-link {
+    //   &::after {
+    //     content: "HABITS";
+    //     left: -15px;
+    //   }
+    // }
 
     a.calendar-link {
       &::after {
-        content: "CALENDAR";
+        content: "HABITS";
         left: -35px;
       }
     }

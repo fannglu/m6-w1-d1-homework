@@ -36,7 +36,7 @@ class NavBar extends Component {
             className="calendar-link"
             exact="true"
             activeclassname="active"
-            to="/inventories"
+            to="/habits"
           >
             <FontAwesomeIcon icon={faCalendar} color="#4d4d4e" />
           </Link>
@@ -45,7 +45,7 @@ class NavBar extends Component {
             className="habit-link"
             exact="true"
             activeclassname="active"
-            to="/profile"
+            to="/register"
           >
             <FontAwesomeIcon icon={faUser} color="#4d4d4e" />
           </Link>

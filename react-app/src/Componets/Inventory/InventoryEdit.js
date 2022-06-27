@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link, withRouter } from "react-router-dom";
 import { Button, Container, Form, FormGroup, Input, Label } from "reactstrap";
+import NavBar from "../Layout/NavBar/index";
+import "../Layout/Layout.scss";
 // import AppNavbar from "../../Navbar";
 
 class InventoryEdit extends Component {
@@ -47,26 +49,26 @@ class InventoryEdit extends Component {
       },
       body: JSON.stringify(item),
     });
-    this.props.history.push("/inventories");
+    this.props.history.push("/habits");
   };
 
   render() {
     const { item } = this.state;
     const title = (
-      <h2 className="mt-3">
+      <h2>
         {/* if item has an id number, otherwise.. */}
         {item._id ? "Edit Inventory" : "Add Inventory"}
       </h2>
     );
     return (
       <div>
-        {/* <AppNavbar /> */}
-        <Container>
+        <NavBar />
+        <Container className="add-habit">
           {/* display the appropriate title */}
-          {title}
+          <h2>Add Habits</h2>
           <Form onSubmit={this.handleSubmit}>
             <FormGroup>
-              <Label for="habitName" className="h5 mt-3">
+              <Label for="habitName" className="h5 mt-3 label">
                 Habit Name
               </Label>
               <Input
@@ -76,6 +78,7 @@ class InventoryEdit extends Component {
                 value={item.habitName || ""}
                 onChange={this.handleChange}
                 autoComplete="habitName"
+                className="input"
               />
             </FormGroup>
             {/* <FormGroup>
@@ -105,7 +108,7 @@ class InventoryEdit extends Component {
               />
             </FormGroup> */}
             <FormGroup>
-              <Label for="status" className="h5 mt-3">
+              <Label for="status" className="h5 mt-3 label">
                 Short Description
               </Label>
               <Input
@@ -115,18 +118,23 @@ class InventoryEdit extends Component {
                 value={item.status || ""}
                 onChange={this.handleChange}
                 autoComplete="status"
+                className="input"
               />
             </FormGroup>
             <FormGroup>
-              <Button color="primary" type="submit" className="mt-3">
+              <Button
+                color="primary"
+                type="submit"
+                className="mt-3 flat-button"
+              >
                 Save
               </Button>
               {""}
               <Button
                 color="secondary"
-                className="mt-3"
+                className="mt-3 flat-button"
                 tag={Link}
-                to="/inventories"
+                to="/habits"
               >
                 Cancel
               </Button>

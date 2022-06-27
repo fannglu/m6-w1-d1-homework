@@ -3,6 +3,8 @@ import Home from "./Componets/Layout/Home";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import InventoryList from "./Componets/Inventory/InventoryList";
 import InventoryEdit from "./Componets/Inventory/InventoryEdit";
+import Register from "./Componets/Register";
+import Login from './Componets/Register/Login'
 // import "./App.css";
 
 class App extends Component {
@@ -12,8 +14,10 @@ class App extends Component {
         <Switch>
 
           <Route path="/" exact={true} component={Home} />
-          <Route path="/inventories" exact={true} component={InventoryList} />
-          <Route path="/inventories/:id" component={InventoryEdit} />
+          <Route path="/register" component={Register} />
+          <Route path="/login" component={Login} />
+          <Route path="/habits" exact={true} component={InventoryList} />
+          <Route path="/habits/:id" component={InventoryEdit} />
         </Switch>
       </Router>
     );

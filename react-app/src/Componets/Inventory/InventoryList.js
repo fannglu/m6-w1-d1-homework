@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import { Button, ButtonGroup, Container, Table } from "reactstrap";
-import NavBar from "../Layout/NavBar/index"
+import NavBar from "../Layout/NavBar/index";
 import { Link, withRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
+import InventoryEdit from "./InventoryEdit";
 // import "./App.css";
 // import { updateInventory } from "../../node-mongo/app/controllers/inventory.controller";
 
@@ -68,7 +69,7 @@ class InventoryList extends Component {
                 size="sm"
                 color="primary"
                 tag={Link}
-                to={"/inventories/" + inventory._id}
+                to={"/habits/" + inventory._id}
               >
                 Edit
               </Button>
@@ -88,15 +89,20 @@ class InventoryList extends Component {
     return (
       <div>
         <NavBar />
-        <Container fluid>
+        {/* <div className="row">
+          <div className="left col-4">
+            <InventoryEdit />
+          </div> */}
+
+        <Container fluid className="col-6">
           <div className="float-right">
             <Button
               color="success"
-              className="my-4"
+              className="my-4 flat-button"
               tag={Link}
-              to="/inventories/new"
+              to="/habits/new"
             >
-              Add inventory
+              Add New Habit
             </Button>
           </div>
           <h3>Habit List</h3>
@@ -114,6 +120,7 @@ class InventoryList extends Component {
           </Table>
         </Container>
       </div>
+      // </div>
     );
   }
 }

@@ -8,7 +8,6 @@ $font-grey-orange: #b8817d;
 $font-orangered: #e3756d;
 $nav-background: #f7eceb;
 
-
 @import "animate.css";
 @import "~loaders.css/src/animations/ball-spin-fade-loader.scss";
 
@@ -46,9 +45,7 @@ textarea {
   animation: fadeIn 1s 1s;
   animation-fill-mode: forwards;
   color: $font-light-purple;
-
 }
-
 
 .page {
   width: 100%;
@@ -59,10 +56,6 @@ textarea {
 .left {
   background: $background-left;
   height: 100vh;
-  position: absolute;
-  
+  // position: absolute;
 }
 
-.register-page, .newHabits-page {
-  position: absolute;
-}
